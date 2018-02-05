@@ -1,0 +1,74 @@
+<h1>Modifier l'employee</h1>
+ <router-outlet>  
+<html>
+<head>
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/landing-page.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+<form class="container" *ngIf="em">
+  <div class="form-row">
+    <div class="form-group col-md-6" >
+      <label for="nom">nom</label>
+      <input  [(ngModel)]="em.nom" name="nom"  type="text" class="form-control" id="nom" placeholder="Nom" />
+    </div>
+    <div class="form-group col-md-6">
+      <label for="Prenom">Prenom</label>
+      <input required [(ngModel)]="em.prenom" name="prenom" type="text" class="form-control" id="Prenom" placeholder="Prenom"/>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6" >
+      <label for="nom">الاسم</label>
+      <input  [(ngModel)]="em.nomar" name="nomar"  type="text" class="form-control" id="nomar" placeholder="الاسم" />
+    </div>
+    <div class="form-group col-md-6">
+      <label for="Prenom">اللقب</label>
+      <input required [(ngModel)]="em.prenomar" name="prenomar" type="text" class="form-control" id="Prenom" placeholder="اللقب"/>
+    </div>
+    <div class="form-group col-md-6">
+       <label for="CIN">CIN</label>
+      <input required [(ngModel)]="em.cin" name="cin" type="number" class="form-control" maxlength="8" id="CIN"/>
+    </div>
+     <div class="form-group col-md-6">
+      <label for="CIN">Matricule CNRPS</label>
+      <input required [(ngModel)]="em.cnrps" name="cnrps" type="text" class="form-control" id="cnrps" placeholder="Matricule"/>  
+    </div>
+    <div class="form-group col-md-6">
+    <label for="inputAddress">Grade</label>
+   		 <input required [(ngModel)]="em.grade" name="grade" type="text" class="form-control" id="grade" placeholder="Grade, poste..." />
+    </div>
+    <div class="form-group col-md-6">
+    <label for="inputAddress2">Fonction</label>
+      <input required [(ngModel)]="em.fonction" name="fonction" type="text" class="form-control" id="fct" placeholder="Chef, simple, employé..."/>
+    </div>
+     <div class="form-group col-md-6">    
+       <label for="Date">Date naissance</label>
+      <input required [(ngModel)]="em.dateNaiss" name="dateNaiss" type="Date" class="form-control" id="dateNaiss" />
+    </div>
+    <div class="form-group col-md-6">
+    <label for="struct">Structure</label>
+      <select required [(ngModel)]="em.structure" name="structure" id="struct" class="form-control">
+        <option selected>Structure</option>
+        <option>MES</option>
+        <option>MJS</option>
+        <option>CNI</option>
+        <option>CNTE</option>
+      </select>      
+    </div>
+  </div>
+  <div class="row text-center">
+<div class="col-md-2 ">
+    <button (click)="updateEmployee()" class=" form-control btn btn-primary center-block">Enregistrer</button>   
+  </div> 
+  <div class="col-md-2" >
+	<button type="reset"  class=" form-control btn btn-danger center-block">Réinitialiser</button>  
+  </div>
+</div>
+</form>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</body>
+ </html>
+</router-outlet>
